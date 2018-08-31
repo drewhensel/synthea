@@ -8,6 +8,7 @@ import org.hl7.fhir.dstu3.model.Condition;
 import org.mitre.synthea.world.concepts.HealthRecord;
 import org.mitre.synthea.world.concepts.HealthRecord.Code;
 import org.mitre.synthea.world.concepts.HealthRecord.Observation;
+import java.util.Random;
 
 /**
  * Helper class for common logic that is used by more than one otherwise unrelated exporter.
@@ -43,13 +44,13 @@ public abstract class ExportHelper {
 
   /**
    * Helper to get a readable string representation of an Observation's type.
-   * 
+   *
    * @param observation The observation to get the type from
    * @return A human-readable string representation of the type of observation.value
    */
   public static String getObservationType(Observation observation) {
     String type = null;
-    
+
     if (observation.value instanceof Condition) {
       type = "text";
     } else if (observation.value instanceof Code) {
@@ -61,14 +62,15 @@ public abstract class ExportHelper {
     } else if (observation.value != null) {
       type = "text";
     }
-    
+
     return type;
   }
 
   /**
    * Year-Month-Day date format.
    */
-  private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("YYY-MM-dd");
+  private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+  private static final SimpleDateFormat SHORT_FORMAT = new SimpleDateFormat("MM/dd/yyyy");
 
   /**
    * Iso8601 date time format.
@@ -86,12 +88,18 @@ public abstract class ExportHelper {
   }
 
   /**
-   * Get a date string in the format YYYY-MM-DD from the given time stamp.
+   * Get a date string in the format MM/dd/yyyy HH:mm:ss from the given time stamp.
    */
   public static String dateFromTimestamp(long time) {
     synchronized (DATE_FORMAT) {
       // http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6231579
       return DATE_FORMAT.format(new Date(time));
+    }
+  }
+
+  public static String shortDateFromTimestamp(long time) {
+    synchronized (SHORT_FORMAT) {
+      return SHORT_FORMAT.format(new Date(time));
     }
   }
 
@@ -104,4 +112,22 @@ public abstract class ExportHelper {
       return ISO_DATE_FORMAT.format(new Date(time));
     }
   }
+
+  public static String randomSeconds(String formattedDate) {
+    Random r = new Random();
+    int low = 0;
+    int high = 60;
+    String result = String.valueOf(r.nextInt(high-low) + low);
+
+    if (result.length() < 2)
+      result = "00".substring(result.length()) + result;
+
+
+    String dateTimeNoSeconds[] = formattedDate.split(":");
+    dateTimeNoSeconds[dateTimeNoSeconds.length-1] = result;
+    String newDateTime = String.join(":",dateTimeNoSeconds);
+
+    return newDateTime;
+  }
+
 }

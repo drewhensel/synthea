@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ca.uhn.hapi.fhir:hapi-fhir-base:3.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ca.uhn.hapi.fhir/hapi-fhir-base/3.3.0/d1c6a7f4890d93e7309256d39a4c66ccdfba8487/hapi-fhir-base-3.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ca.uhn.hapi.fhir/hapi-fhir-base/3.3.0/cf85183595b577adc85b60d4fa6b8c13489732ec/hapi-fhir-base-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
