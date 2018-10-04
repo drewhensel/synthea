@@ -3,6 +3,7 @@ package org.mitre.synthea.export;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.Locale;
 
 import org.hl7.fhir.dstu3.model.Condition;
 import org.mitre.synthea.world.concepts.HealthRecord;
@@ -34,12 +35,40 @@ public abstract class ExportHelper {
       value = (String)observation.value;
     } else if (observation.value instanceof Double) {
       // round to 1 decimal place for display
-      value = String.format("%.1f", observation.value);
+      value = String.format(Locale.US, "%.1f", observation.value);
     } else if (observation.value != null) {
       value = observation.value.toString();
     }
     
     return value;
+  }
+
+  /**
+   * Helper to get a readable string representation of an Observation's value.
+   * Units are not included.
+   *
+   * @param observation The observation to get the value from.
+   * @param code The observation or component observation matching this code.
+   * @return A human-readable string representation of observation with the given code.
+   */
+  public static String getObservationValue(Observation observation, String code) {
+    // Check whether this observation has the desired code.
+    for (Code c : observation.codes) {
+      if (c.code.equals(code)) {
+        return getObservationValue(observation);
+      }
+    }
+
+    // Check whether any of the contained observations have the desired code.
+    String value = null;
+    for (Observation o : observation.observations) {
+      value = getObservationValue(o, code);
+      if (value != null) {
+        return value;
+      }
+    }
+
+    return null;
   }
 
   /**

@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.UUID;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -95,7 +96,7 @@ public class CSVExporter {
    **/
   private FileWriter socialdet;
 
-  
+
   /**
    * System-dependent string for a line break. (\n on Mac, *nix, \r\n on Windows)
    */
@@ -168,7 +169,7 @@ public class CSVExporter {
         imagingStudies = new FileWriter(imagingStudiesFile);
         writeCSVHeaders();
       }
-  
+
 
     } catch (IOException e) {
       // wrap the exception in a runtime exception.
@@ -261,7 +262,7 @@ public class CSVExporter {
     }
 
   }
-  
+
   /**
    *  Thread safe singleton pattern adopted from
    *  https://stackoverflow.com/questions/7048198/thread-safe-singletons-in-java
@@ -336,7 +337,7 @@ public class CSVExporter {
         imagingStudy(personID, encounterID, imagingStudy);
       }
     }
-    
+
     patients.flush();
     encounters.flush();
     conditions.flush();
@@ -467,7 +468,7 @@ public class CSVExporter {
    * @throws IOException if any IO error occurs
    */
   private String encounter(String personID, Encounter encounter) throws IOException {
-    // Original: ID,START,STOP,PATIENT,CODE,DESCRIPTION,COST,REASONCODE,REASONDESCRIPTION
+    // Original: ID,START,STOP,PATIENT,ENCOUNTERCLASS,CODE,DESCRIPTION,COST,REASONCODE,REASONDESCRIPTION
     // Comcast: MRN,Timestamp,EncounterID,EncounterDate,EncounterCode,EncounterType,EncounterReasonCode,EncounterReason
     StringBuilder s = new StringBuilder();
 
@@ -519,18 +520,25 @@ public class CSVExporter {
       }
       s.append(personID).append(',');
 
-      Code coding = encounter.codes.get(0);
-      s.append(coding.code).append(',');
-      s.append(clean(coding.display)).append(',');
+    //ENCOUNTERCLASS
+    if (encounter.type != null) {
+      s.append(encounter.type.toLowerCase()).append(',');
+    } else {
+      s.append(',');
+    }
 
-      s.append(String.format("%.2f", encounter.cost())).append(',');
+    Code coding = encounter.codes.get(0);
+    s.append(coding.code).append(',');
+    s.append(clean(coding.display)).append(',');
 
-      if (encounter.reason == null) {
-        s.append(','); // reason code & desc
-      } else {
-        s.append(encounter.reason.code).append(',');
-        s.append(clean(encounter.reason.display));
-      }
+    s.append(String.format("%.2f", encounter.cost())).append(',');
+
+    if (encounter.reason == null) {
+      s.append(','); // reason code & desc
+    } else {
+      s.append(encounter.reason.code).append(',');
+      s.append(clean(encounter.reason.display));
+    }
 
       s.append(NEWLINE);
       write(s.toString(), encounters);
@@ -894,7 +902,7 @@ public class CSVExporter {
 
   /**
    * Write a single Medication to medications.csv.
-   * 
+   *
    * @param personID ID of the person prescribed the medication.
    * @param encounterID ID of the encounter where the medication was prescribed
    * @param medication The medication itself
@@ -1008,16 +1016,16 @@ public class CSVExporter {
       s.append(coding.code).append(',');
       s.append(clean(coding.display)).append(',');
 
-      BigDecimal cost = medication.cost();
-      s.append(cost).append(',');
-      long dispenses = 1; // dispenses = refills + original
-      // makes the math cleaner and more explicit. dispenses * unit cost = total cost
-
-      long stop = medication.stop;
-      if (stop == 0L) {
-        stop = stopTime;
-      }
-      long medDuration = stop - medication.start;
+    BigDecimal cost = medication.cost();
+    s.append(String.format(Locale.US, "%.2f", cost)).append(',');
+    long dispenses = 1; // dispenses = refills + original
+    // makes the math cleaner and more explicit. dispenses * unit cost = total cost
+    
+    long stop = medication.stop;
+    if (stop == 0L) {
+      stop = stopTime;
+    }
+    long medDuration = stop - medication.start;
 
       if (medication.prescriptionDetails != null
               && medication.prescriptionDetails.has("refills")) {
@@ -1043,11 +1051,11 @@ public class CSVExporter {
         dispenses = 1;
       }
 
-      s.append(dispenses).append(',');
-      BigDecimal totalCost = cost
-              .multiply(BigDecimal.valueOf(dispenses))
-              .setScale(2, RoundingMode.DOWN); // truncate to 2 decimal places
-      s.append(totalCost).append(',');
+    s.append(dispenses).append(','); 
+    BigDecimal totalCost = cost
+        .multiply(BigDecimal.valueOf(dispenses))
+        .setScale(2, RoundingMode.DOWN); // truncate to 2 decimal places
+    s.append(String.format(Locale.US, "%.2f", totalCost)).append(',');
 
       if (medication.reasons.isEmpty()) {
         s.append(','); // reason code & desc
@@ -1104,7 +1112,7 @@ public class CSVExporter {
       s.append(coding.code).append(',');
       s.append(clean(coding.display)).append(',');
 
-      s.append(String.format("%.2f", immunization.cost()));
+    s.append(String.format(Locale.US, "%.2f", immunization.cost()));
 
       s.append(NEWLINE);
       write(s.toString(), immunizations);
@@ -1126,7 +1134,7 @@ public class CSVExporter {
     // Comcast: MRN,Timestamp,CarePlanID,EncounterID,StartDate,EndDate,CarePlanDuration,CarePlanCode,
     // CarePlanDescription,CarePlanReasonCode,CarePlanReason
     StringBuilder s = new StringBuilder();
-    
+
     String careplanID = UUID.randomUUID().toString();
 
     if(comcastOutput){

@@ -2,8 +2,325 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d83b7f4c-d31f-4e2a-a036-4350ae759587" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CDWExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirPractitionerExporterDstu2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirPractitionerExporterR4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirPractitionerExporterStu3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirR4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/HospitalExporterR4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/helpers/FactTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/agents/Clinician.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/concepts/ClinicianSpecialty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/geography/timezones.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/geography/veteran_demographics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/congestive_heart_failure.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/dialysis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/gallstones.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/hypothyroidism.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/mTBI.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/surgery/general_anesthesia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_hyperlipidemia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_lung_cancer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_mdd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_prostate_cancer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_ptsd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_self_harm.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_substance_abuse_conditions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veteran_substance_abuse_treatment.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modules/veterans/veteran_suicide_probabilities.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/providers/primary_care_facilities.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/CDWExporterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/FHIRR4ExporterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/HospitalExporterTestR4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/ValidationResources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/ValidationSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/helpers/FactTableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/modules/ImmunizationsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-adjstmt-dltn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-adjudication-categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-asgmntcd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-betos-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-brnd-gnrc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-carr-clm-pmt-dnl-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-carr-line-mtus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-carr-line-prcng-lclty-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-carr-line-prvdr-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-carr-num.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-claim-query-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-fac-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-freq-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-hha-lupa-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-hha-rfrl-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-ip-admsn-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-mco-pd-sw.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-mdcr-non-pmt-rsn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-poa-ind-sw1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-clm-src-ip-admsn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-ctstrphc-cvrg-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-daw-prod-slctn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-dmerc-line-prcng-state-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-dmerc-line-supplr-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-drug-cvrg-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-dspnsng-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-gndr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-information-categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-line-bene-prmry-pyr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-line-pmt-80-100-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-line-service-deductible.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-nch-prmry-pyr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-nch-ptnt-stus-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-nstd-frmt-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-phrmcy-srvc-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-plan-cntrct-rec-id.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-prcng-excptn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-prtcptng-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-prvdr-state-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-ptnt-dschrg-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-ptnt-rsdnc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-race.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-rev-cntr-ddctbl-coinsrnc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-rev-cntr-ndc-qty-qlfr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-rev-cntr-stus-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-rx-orgn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/CodeSystem-submsn-clr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ImplementationGuide-ig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-asgmntcd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-betos-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-clm-cash-ddctbl-apld-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-clm-pmt-dnl-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-ansthsa-unit-cnt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-clia-lab-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-mtus-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-mtus-cnt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-prcng-lclty-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-line-prvdr-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-carr-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-clm-clncl-tril-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-line-bene-prmry-pyr-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-line-hct-hgb-rslt-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-line-pmt-80-100-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-line-service-deductible-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-nch-carr-clm-alowd-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-nch-carr-clm-sbmtd-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-nch-clm-bene-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-nch-clm-prvdr-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-ndc-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-prtcptng-ind-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-prvdr-state-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-prvdr-zip-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-carrier-us-npi-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-asgmntcd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-betos-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-carr-clm-cash-ddctbl-apld-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-carr-clm-pmt-dnl-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-carr-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-clm-clncl-tril-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-dmerc-line-mtus-cnt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-dmerc-line-prcng-state-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-dmerc-line-scrn-svgs-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-dmerc-line-supplr-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-line-bene-prmry-pyr-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-line-hct-hgb-rslt-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-line-pmt-80-100-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-line-service-deductible-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-nch-carr-clm-alowd-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-nch-carr-clm-sbmtd-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-nch-clm-bene-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-nch-clm-prvdr-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-ndc-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-prtcptng-ind-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-prvdr-state-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-dme-suplrnum-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-clm-fac-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-clm-mdcr-non-pmt-rsn-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-fi-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-rev-cntr-ddctbl-coinsrnc-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-rev-cntr-ndc-qty-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hha-rev-cntr-stus-ind-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-bene-hospc-prd-cnt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-clm-fac-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-clm-mdcr-non-pmt-rsn-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-fi-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-rev-cntr-ddctbl-coinsrnc-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-hospice-rev-cntr-ndc-qty-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-claim-query-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-fac-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-mdcr-non-pmt-rsn-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pass-thru-per-diem-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-poa-ind-sw1-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-cptl-dsprprtnt-shr-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-cptl-excptn-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-cptl-fsp-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-cptl-ime-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-cptl-outlier-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-pps-old-cptl-hld-hrmls-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-clm-tot-pps-cptl-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-dsh-op-clm-val-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-fi-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-ime-op-clm-val-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-bene-blood-ddctbl-lblty-am-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-bene-ip-ddctbl-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-bene-pta-coinsrnc-lblty-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-drg-outlier-aprvd-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-ip-ncvrd-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-ip-tot-ddctn-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-nch-profnl-cmpnt-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-rev-cntr-ddctbl-coinsrnc-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-inpatient-rev-cntr-ndc-qty-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-claim-query-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-clm-fac-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-clm-mdcr-non-pmt-rsn-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-clm-op-bene-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-clm-op-prvdr-pmt-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-fi-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-nch-bene-blood-ddctbl-lblty-am-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-nch-bene-ptb-coinsrnc-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-nch-bene-ptb-ddctbl-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-nch-profnl-cmpnt-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-rev-cntr-ide-ndc-upc-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-rev-cntr-ndc-qty-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-outpatient-rev-cntr-stus-ind-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-patient-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-patient-race-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-benefit-package-id-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-days-supply-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-fill-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-phrmcy-srvc-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-pde-plan-cntrct-rec-id-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-claim-query-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-claim.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-fac-type-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-mdcr-non-pmt-rsn-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-cptl-dsprprtnt-shr-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-cptl-excptn-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-cptl-fsp-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-cptl-ime-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-cptl-outlier-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-clm-pps-old-cptl-hld-hrmls-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-fi-num-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-nch-bene-blood-ddctbl-lblty-am-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-nch-bene-ip-ddctbl-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-nch-bene-pta-coinsrnc-lblty-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-nch-ip-ncvrd-chrg-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-nch-ip-tot-ddctn-amt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-prpayamt-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/StructureDefinition-bluebutton-snf-rev-cntr-ddctbl-coinsrnc-cd-extension.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-adjstmt-dltn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-adjudications.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-asgmntcd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-betos-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-brnd-gnrc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-carr-clm-pmt-dnl-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-carr-line-mtus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-carr-line-prcng-lclty-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-carr-line-prvdr-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-carr-num.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-claim-query-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-fac-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-freq-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-hha-lupa-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-hha-rfrl-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-ip-admsn-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-mco-pd-sw.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-mdcr-non-pmt-rsn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-poa-ind-sw1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-clm-src-ip-admsn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-ctstrphc-cvrg-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-daw-prod-slctn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-dmerc-line-prcng-state-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-dmerc-line-supplr-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-drug-cvrg-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-dspnsng-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-gndr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-information-categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-line-bene-prmry-pyr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-line-pmt-80-100-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-line-service-deductible.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-nch-prmry-pyr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-nch-ptnt-stus-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-nstd-frmt-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-phrmcy-srvc-type-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-plan-cntrct-rec-id.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-prcng-excptn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-prtcptng-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-prvdr-state-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-ptnt-dschrg-stus-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-ptnt-rsdnc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-race.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-rev-cntr-ddctbl-coinsrnc-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-rev-cntr-ndc-qty-qlfr-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-rev-cntr-stus-ind-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-rx-orgn-cd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/structureDefinitions/stu3/blueButton2/ValueSet-submsn-clr-cd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CCDAExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CCDAExporter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/Exporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/Exporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirDstu2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirDstu2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirStu3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/FhirStu3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/HospitalDSTU2Exporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/HospitalExporterDstu2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/HospitalExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/HospitalExporterStu3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/TextExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/TextExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/helpers/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/helpers/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/helpers/SimpleCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/helpers/SimpleCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/EncounterModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/EncounterModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/HealthInsuranceModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/HealthInsuranceModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/Immunizations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/Immunizations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/LifecycleModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/modules/LifecycleModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/agents/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/agents/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/agents/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/agents/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/concepts/BirthStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/concepts/BirthStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/concepts/HealthRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/concepts/HealthRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/geography/zipcodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/geography/zipcodes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/immunization_schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/immunization_schedule.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/colorectal_cancer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/colorectal_cancer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/copd.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/copd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/cystic_fibrosis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/cystic_fibrosis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/fibromyalgia.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/fibromyalgia.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/gout.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/gout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/homelessness.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/homelessness.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/lung_cancer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/lung_cancer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/metabolic_syndrome_care.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/metabolic_syndrome_care.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/metabolic_syndrome_disease.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/metabolic_syndrome_disease.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/opioid_addiction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/opioid_addiction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/osteoarthritis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/osteoarthritis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/pregnancy.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/pregnancy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/sore_throat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/sore_throat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/modules/wellness_encounters.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/modules/wellness_encounters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/providers/va_facilities.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/providers/va_facilities.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/synthea.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/synthea.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/TestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/TestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/FHIRDSTU2ExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/FHIRDSTU2ExporterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/FHIRExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/FHIRSTU3ExporterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/HospitalDSTU2ExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/HospitalExporterTestDstu2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/HospitalExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/export/HospitalExporterTestStu3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/helpers/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/helpers/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/world/agents/ProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/world/agents/ProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/world/geography/LocationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mitre/synthea/world/geography/LocationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/generic/observation_groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/generic/observation_groups.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -40,13 +357,13 @@
     <session id="-1351112710">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="2" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -65,13 +382,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1951" />
+          <entry key="java" value="1958" />
           <entry key="properties" value="355" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1951" />
+          <entry key="JAVA" value="1958" />
           <entry key="Properties" value="355" />
         </counts>
       </usages-collector>
@@ -79,22 +396,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+            <state relative-caret-position="514">
+              <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="564" column="33" selection-start-line="564" selection-start-column="33" selection-end-line="564" selection-end-column="33" />
+            <state relative-caret-position="-505">
+              <caret line="562" selection-start-line="562" selection-end-line="562" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#11626#11627#0" expanded="true" />
+                <element signature="e#11667#11668#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +421,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="537">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -112,8 +430,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5950">
-              <caret line="366" column="38" selection-start-line="366" selection-start-column="38" selection-end-line="366" selection-end-column="38" />
+            <state relative-caret-position="5933">
+              <caret line="365" column="38" selection-start-line="365" selection-start-column="38" selection-end-line="365" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -121,8 +439,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="612">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -426,7 +744,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6134748490702" />
+        <entry key="$PROJECT_DIR$" value="6139764042076" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1322074671" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1613248354" />
@@ -559,7 +877,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="1932" />
     <option name="height" value="1047" />
@@ -569,9 +887,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -644,6 +959,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -713,8 +1031,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10737179" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10844017" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -760,41 +1079,42 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/geography/demographics.csv">
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5950">
-          <caret line="366" column="38" selection-start-line="366" selection-start-column="38" selection-end-line="366" selection-end-column="38" />
+        <state relative-caret-position="5933">
+          <caret line="365" column="38" selection-start-line="365" selection-start-column="38" selection-end-line="365" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="612">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="564" column="33" selection-start-line="564" selection-start-column="33" selection-end-line="564" selection-end-column="33" />
+        <state relative-caret-position="-505">
+          <caret line="562" selection-start-line="562" selection-end-line="562" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#11626#11627#0" expanded="true" />
+            <element signature="e#11667#11668#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
         </state>
       </provider>
     </entry>
