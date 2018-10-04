@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d83b7f4c-d31f-4e2a-a036-4350ae759587" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/synthea.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/synthea.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -20,16 +19,34 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="synthea" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1351112710">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,13 +65,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1679" />
+          <entry key="java" value="1951" />
           <entry key="properties" value="355" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1679" />
+          <entry key="JAVA" value="1951" />
           <entry key="Properties" value="355" />
         </counts>
       </usages-collector>
@@ -71,25 +88,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="199" column="9" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+            <state relative-caret-position="362">
+              <caret line="564" column="33" selection-start-line="564" selection-start-column="33" selection-end-line="564" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9885#9886#0" expanded="true" />
-                <element signature="e#9926#9927#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="765">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -97,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1981">
+            <state relative-caret-position="5950">
               <caret line="366" column="38" selection-start-line="366" selection-start-column="38" selection-end-line="366" selection-end-column="38" />
             </state>
           </provider>
@@ -122,6 +137,7 @@
       <find>onlyDeadPatients</find>
       <find>iso</find>
       <find>cost</find>
+      <find>condition</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -538,16 +554,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mitre/synthea/engine/Generator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/synthea.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="106" />
-    <option name="y" value="86" />
-    <option name="width" value="1595" />
-    <option name="height" value="983" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-7" />
+    <option name="width" value="1932" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -555,8 +570,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -632,7 +647,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535743323212" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536095374009" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -697,10 +712,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10737179" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -715,15 +729,15 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49967426" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50032574" side_tool="true" visible="true" weight="0.26845637" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49967426" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50032574" side_tool="true" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49967426" visible="true" weight="0.34463894" />
       <window_info anchor="bottom" id="Build" order="10" sideWeight="0.49967426" weight="0.32941177" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.3296417" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
@@ -737,16 +751,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/geography/zipcodes.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/geography/demographics.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/ExportHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5950">
+          <caret line="366" column="38" selection-start-line="366" selection-start-column="38" selection-end-line="366" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -757,35 +788,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/geography/zipcodes.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/geography/demographics.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/world/geography/Demographics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1981">
-          <caret line="366" column="38" selection-start-line="366" selection-start-column="38" selection-end-line="366" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mitre/synthea/export/CSVExporter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="199" column="9" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+        <state relative-caret-position="362">
+          <caret line="564" column="33" selection-start-line="564" selection-start-column="33" selection-end-line="564" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9885#9886#0" expanded="true" />
-            <element signature="e#9926#9927#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/synthea.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
         </state>
       </provider>
     </entry>

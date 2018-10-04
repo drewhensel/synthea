@@ -19,7 +19,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.lang.String;
 
-import org.apache.xpath.operations.Bool;
 import org.mitre.synthea.helpers.Utilities;
 import org.mitre.synthea.helpers.Config;
 import org.mitre.synthea.world.agents.Person;
@@ -91,7 +90,6 @@ public class CSVExporter {
    * Writer for vital-observation.csv.
   **/
   private FileWriter vitals;
-
   /**
    * Writer for social-determinant.csv.
    **/
@@ -118,32 +116,60 @@ public class CSVExporter {
       File output = Exporter.getOutputFolder("csv", null);
       output.mkdirs();
       Path outputDirectory = output.toPath();
-      File patientsFile = outputDirectory.resolve("patients.csv").toFile();
-      File allergiesFile = outputDirectory.resolve("allergies.csv").toFile();
-      File medicationsFile = outputDirectory.resolve("medication.csv").toFile();
-      File conditionsFile = outputDirectory.resolve("condition.csv").toFile();
-      File careplansFile = outputDirectory.resolve("careplan.csv").toFile();
-      File observationsFile = outputDirectory.resolve("lab-observation.csv").toFile();
-      File proceduresFile = outputDirectory.resolve("procedure.csv").toFile();
-      File immunizationsFile = outputDirectory.resolve("immunization.csv").toFile();
-      File encountersFile = outputDirectory.resolve("encounter.csv").toFile();
-      File vitalsFile = outputDirectory.resolve("vital-observation.csv").toFile();
-      File socialDetFile = outputDirectory.resolve("social-determinant.csv").toFile();
-      File imagingStudiesFile = outputDirectory.resolve("imaging_studies.csv").toFile();
+      if(comcastOutput){
+        File patientsFile = outputDirectory.resolve("patients.csv").toFile();
+        File allergiesFile = outputDirectory.resolve("allergies.csv").toFile();
+        File medicationsFile = outputDirectory.resolve("medication.csv").toFile();
+        File conditionsFile = outputDirectory.resolve("condition.csv").toFile();
+        File careplansFile = outputDirectory.resolve("careplan.csv").toFile();
+        File observationsFile = outputDirectory.resolve("lab-observation.csv").toFile();
+        File proceduresFile = outputDirectory.resolve("procedure.csv").toFile();
+        File immunizationsFile = outputDirectory.resolve("immunization.csv").toFile();
+        File encountersFile = outputDirectory.resolve("encounter.csv").toFile();
+        File vitalsFile = outputDirectory.resolve("vital-observation.csv").toFile();
+        File socialDetFile = outputDirectory.resolve("social-determinant.csv").toFile();
+        File imagingStudiesFile = outputDirectory.resolve("imaging_studies.csv").toFile();
+
+        patients = new FileWriter(patientsFile);
+        allergies = new FileWriter(allergiesFile);
+        medications = new FileWriter(medicationsFile);
+        conditions = new FileWriter(conditionsFile);
+        careplans = new FileWriter(careplansFile);
+        observations = new FileWriter(observationsFile);
+        procedures = new FileWriter(proceduresFile);
+        immunizations = new FileWriter(immunizationsFile);
+        encounters = new FileWriter(encountersFile);
+        vitals = new FileWriter(vitalsFile);
+        socialdet = new FileWriter(socialDetFile);
+        imagingStudies = new FileWriter(imagingStudiesFile);
+        writeCSVHeaders();
+      }
+      else{
+        File patientsFile = outputDirectory.resolve("patients.csv").toFile();
+        File allergiesFile = outputDirectory.resolve("allergies.csv").toFile();
+        File medicationsFile = outputDirectory.resolve("medications.csv").toFile();
+        File conditionsFile = outputDirectory.resolve("conditions.csv").toFile();
+        File careplansFile = outputDirectory.resolve("careplans.csv").toFile();
+        File observationsFile = outputDirectory.resolve("observations.csv").toFile();
+        File proceduresFile = outputDirectory.resolve("procedures.csv").toFile();
+        File immunizationsFile = outputDirectory.resolve("immunizations.csv").toFile();
+        File encountersFile = outputDirectory.resolve("encounters.csv").toFile();
+        File imagingStudiesFile = outputDirectory.resolve("imaging_studies.csv").toFile();
+
+        patients = new FileWriter(patientsFile);
+        allergies = new FileWriter(allergiesFile);
+        medications = new FileWriter(medicationsFile);
+        conditions = new FileWriter(conditionsFile);
+        careplans = new FileWriter(careplansFile);
+        observations = new FileWriter(observationsFile);
+        procedures = new FileWriter(proceduresFile);
+        immunizations = new FileWriter(immunizationsFile);
+        encounters = new FileWriter(encountersFile);
+        imagingStudies = new FileWriter(imagingStudiesFile);
+        writeCSVHeaders();
+      }
   
-      patients = new FileWriter(patientsFile);
-      allergies = new FileWriter(allergiesFile);
-      medications = new FileWriter(medicationsFile);
-      conditions = new FileWriter(conditionsFile);
-      careplans = new FileWriter(careplansFile);
-      observations = new FileWriter(observationsFile);
-      procedures = new FileWriter(proceduresFile);
-      immunizations = new FileWriter(immunizationsFile);
-      encounters = new FileWriter(encountersFile);
-      vitals = new FileWriter(vitalsFile);
-      socialdet = new FileWriter(socialDetFile);
-      imagingStudies = new FileWriter(imagingStudiesFile);
-      writeCSVHeaders();
+
     } catch (IOException e) {
       // wrap the exception in a runtime exception.
       // the singleton pattern below doesn't work if the constructor can throw
@@ -295,12 +321,15 @@ public class CSVExporter {
         careplan(personID, encounterID, careplan);
       }
 
-      for (Observation observation : encounter.observations) {
-        vitals(personID, encounterID, observation);
-      }
+      // only split out vitals and social determinants for Comcast timeline output
+      if(comcastOutput) {
+        for (Observation observation : encounter.observations) {
+          vitals(personID, encounterID, observation);
+        }
 
-      for (Observation observation : encounter.observations) {
-        socialdet(personID, encounterID, observation);
+        for (Observation observation : encounter.observations) {
+          socialdet(personID, encounterID, observation);
+        }
       }
 
       for (ImagingStudy imagingStudy : encounter.imagingStudies) {
@@ -317,8 +346,10 @@ public class CSVExporter {
     observations.flush();
     procedures.flush();
     immunizations.flush();
-    vitals.flush();
-    socialdet.flush();
+    if(comcastOutput){
+      vitals.flush();
+      socialdet.flush();
+    }
     imagingStudies.flush();
   }
 
@@ -522,8 +553,8 @@ public class CSVExporter {
     // Comcast: MRN,Timestamp,EncounterID,StartDate,EndDate,ConditionDuration,ConditionCode,ConditionDescription
     StringBuilder s = new StringBuilder();
 
-    s.append(personID).append(',');
     if(comcastOutput){
+      s.append(personID).append(',');
       // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
       String timeStamp = randomSeconds(dateFromTimestamp(condition.start));
       s.append(timeStamp).append(',');
@@ -633,15 +664,15 @@ public class CSVExporter {
     // MRN,Timestamp,LabDate,LOINCCode,LOINCDescription,LabValue,LabUnits,EncounterID
     // Check to see if the code is NOT one of the vitals codes for height, weight, BMI, and systolic/diastolic blood pressure
     Code coding = observation.codes.get(0);
-    if (!(coding.code.equals("8302-2")) && !(coding.code.equals("29463-7")) && !(coding.code.equals("39156-5"))
-            && !(coding.code.equals("8462-4")) && !(coding.code.equals("8480-6")) && !(coding.code.equals("8331-1"))
-            && !(coding.code.equals("69453-9")) && !(coding.code.equals("76690-7")) && !(coding.code.equals("55277-8"))
-            && !(coding.code.equals("28245-9")) && !(coding.code.equals("71802-3")) && !(coding.code.equals("63513-6"))
-            && !(coding.code.equals("46240-8")) && !(coding.code.equals("72106-8"))) {
+    if(comcastOutput) {
+      if (!(coding.code.equals("8302-2")) && !(coding.code.equals("29463-7")) && !(coding.code.equals("39156-5"))
+              && !(coding.code.equals("8462-4")) && !(coding.code.equals("8480-6")) && !(coding.code.equals("8331-1"))
+              && !(coding.code.equals("69453-9")) && !(coding.code.equals("76690-7")) && !(coding.code.equals("55277-8"))
+              && !(coding.code.equals("28245-9")) && !(coding.code.equals("71802-3")) && !(coding.code.equals("63513-6"))
+              && !(coding.code.equals("46240-8")) && !(coding.code.equals("72106-8"))) {
 
-      StringBuilder s = new StringBuilder();
+        StringBuilder s = new StringBuilder();
 
-      if(comcastOutput){
         s.append(personID).append(',');
         // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
         String timeStamp = randomSeconds(dateFromTimestamp(observation.start));
@@ -654,28 +685,32 @@ public class CSVExporter {
         s.append(observation.unit).append(',');
         s.append(encounterID);
 
-        s.append(NEWLINE);
-        write(s.toString(), observations);
-      }
-      else{
-        s.append(dateFromTimestamp(observation.start)).append(',');
-        s.append(personID).append(',');
-        s.append(encounterID).append(',');
-
-        //Code coding = observation.codes.get(0);
-
-        s.append(coding.code).append(',');
-        s.append(clean(coding.display)).append(',');
-
-        String value = ExportHelper.getObservationValue(observation);
-        String type = ExportHelper.getObservationType(observation);
-        s.append(value).append(',');
-        s.append(observation.unit).append(',');
-        s.append(type);
+        // investigate what type is
+        // String type = ExportHelper.getObservationType(observation);
+        // s.append(type);
 
         s.append(NEWLINE);
         write(s.toString(), observations);
       }
+    }
+    else{
+      StringBuilder s = new StringBuilder();
+
+      s.append(dateFromTimestamp(observation.start)).append(',');
+      s.append(personID).append(',');
+      s.append(encounterID).append(',');
+
+      s.append(coding.code).append(',');
+      s.append(clean(coding.display)).append(',');
+
+      String value = ExportHelper.getObservationValue(observation);
+      String type = ExportHelper.getObservationType(observation);
+      s.append(value).append(',');
+      s.append(observation.unit).append(',');
+      s.append(type);
+
+      s.append(NEWLINE);
+      write(s.toString(), observations);
     }
   }
 
@@ -713,46 +748,24 @@ public class CSVExporter {
 
       StringBuilder s = new StringBuilder();
 
-      if(comcastOutput){
-        s.append(personID).append(',');
-        // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
-        String timeStamp = randomSeconds(dateFromTimestamp(observation.start));
-        s.append(timeStamp).append(',');
-        s.append(shortDateFromTimestamp(observation.start)).append(',');
-        s.append(coding.code).append(',');
-        s.append(clean(coding.display)).append(',');
-        String value = ExportHelper.getObservationValue(observation);
-        s.append(value).append(',');
-        s.append(observation.unit).append(',');
-        s.append(encounterID);
+      s.append(personID).append(',');
+      // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
+      String timeStamp = randomSeconds(dateFromTimestamp(observation.start));
+      s.append(timeStamp).append(',');
+      s.append(shortDateFromTimestamp(observation.start)).append(',');
+      s.append(coding.code).append(',');
+      s.append(clean(coding.display)).append(',');
+      String value = ExportHelper.getObservationValue(observation);
+      s.append(value).append(',');
+      s.append(observation.unit).append(',');
+      s.append(encounterID);
 
-        // investigate what type is
-        // String type = ExportHelper.getObservationType(observation);
-        // s.append(type);
+      // investigate what type is
+      // String type = ExportHelper.getObservationType(observation);
+      // s.append(type);
 
-        s.append(NEWLINE);
-        write(s.toString(), vitals);
-      }
-      else{
-        s.append(dateFromTimestamp(observation.start)).append(',');
-        s.append(personID).append(',');
-        s.append(encounterID).append(',');
-
-        //Code coding = observation.codes.get(0);
-
-        s.append(coding.code).append(',');
-        s.append(clean(coding.display)).append(',');
-
-        String value = ExportHelper.getObservationValue(observation);
-        String type = ExportHelper.getObservationType(observation);
-        s.append(value).append(',');
-        s.append(observation.unit).append(',');
-        s.append(type);
-
-        s.append(NEWLINE);
-        write(s.toString(), vitals);
-      }
-
+      s.append(NEWLINE);
+      write(s.toString(), vitals);
     }
   }
 
@@ -791,41 +804,24 @@ public class CSVExporter {
 
       StringBuilder s = new StringBuilder();
 
-      if(comcastOutput){
-        s.append(personID).append(',');
-        // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
-        String timeStamp = randomSeconds(dateFromTimestamp(observation.start));
-        s.append(timeStamp).append(',');
-        s.append(shortDateFromTimestamp(observation.start)).append(',');
-        s.append(coding.code).append(',');
-        s.append(clean(coding.display)).append(',');
-        String value = ExportHelper.getObservationValue(observation);
-        s.append(value).append(',');
-        s.append(observation.unit).append(',');
-        s.append(encounterID);
+      s.append(personID).append(',');
+      // generate random seconds for each record as Comcast timeline product doesn't like identical timestamps
+      String timeStamp = randomSeconds(dateFromTimestamp(observation.start));
+      s.append(timeStamp).append(',');
+      s.append(shortDateFromTimestamp(observation.start)).append(',');
+      s.append(coding.code).append(',');
+      s.append(clean(coding.display)).append(',');
+      String value = ExportHelper.getObservationValue(observation);
+      s.append(value).append(',');
+      s.append(observation.unit).append(',');
+      s.append(encounterID);
 
-        s.append(NEWLINE);
-        write(s.toString(), socialdet);
-      }
-      else{
-        s.append(dateFromTimestamp(observation.start)).append(',');
-        s.append(personID).append(',');
-        s.append(encounterID).append(',');
+      // investigate what type is
+      // String type = ExportHelper.getObservationType(observation);
+      // s.append(type);
 
-        //Code coding = observation.codes.get(0);
-
-        s.append(coding.code).append(',');
-        s.append(clean(coding.display)).append(',');
-
-        String value = ExportHelper.getObservationValue(observation);
-        String type = ExportHelper.getObservationType(observation);
-        s.append(value).append(',');
-        s.append(observation.unit).append(',');
-        s.append(type);
-
-        s.append(NEWLINE);
-        write(s.toString(), socialdet);
-      }
+      s.append(NEWLINE);
+      write(s.toString(), socialdet);
     }
   }
 
